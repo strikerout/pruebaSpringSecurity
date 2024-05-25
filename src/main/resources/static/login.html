@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Form</title>
+</head>
+<body>
+<h2>Login</h2>
+<form id="loginForm" action="/login" method="POST">
+    <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+    </div>
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+    </div>
+    <div>
+        <button type="button" id="loginButton">Login</button>
+    </div>
+</form>
+
+<script>
+    document.getElementById("loginButton").addEventListener("click", function() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        if (username.trim() === "" || password.trim() === "") {
+            alert("Please enter both username and password.");
+        } else {
+            document.getElementById("loginForm").submit();
+        }
+    });
+</script>
+</body>
+</html>
